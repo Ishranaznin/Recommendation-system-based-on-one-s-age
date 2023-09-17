@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAF8E5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCapture"
+                style="@style/Widget.MaterialComponents.Button.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="captureImage"
+                android:text="Capture Image"
+                android:textColor="#F1E8E8"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="#F44336"
+                app:elevation="5dp"
+                app:icon="@drawable/baseline_photo_camera_24"
+                app:iconGravity="textEnd"
+                app:iconTint="#FBF08B" />
+
+            <Button
+                style="@style/Widget.MaterialComponents.Button.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="selectImage"
+                android:text="Select Image"
+                android:textColor="#F4EBEB"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="#E91E63"
+                app:elevation="5dp"
+                app:icon="@drawable/baseline_insert_photo_24"
+                app:iconGravity="textEnd"
+                app:iconTint="#FBF08B" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFE"
+                android:orientation="vertical">
+
+                <!-- Media -->
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    app:srcCompat="@android:drawable/ic_menu_report_image"></ImageView>
+
+                <TextView
+                    android:id="@+id/imgName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No Image Selected."
+                    android:textAlignment="center"
+                    android:textColor="#807E76"
+                    android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        app:backgroundTint="#8BC34A"
+                        android:onClick="connectServer"
+                        android:text="Predict Age"
+                        android:textColor="#171717"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        app:elevation="15dp"
+                        app:icon="@drawable/baseline_online_prediction_24"
+                        app:iconGravity="textStart"
+                        app:iconSize="35dp"
+                        app:iconTint="#FBF08B" />
+
+                    <TextView
+                        android:id="@+id/responseText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FF5722"
+                    android:padding="5dp"
+                    android:text="Recommendation Videos: "
+                    android:textAlignment="viewStart"
+                    android:textColor="#F8F3F5"
+                    android:textSize="23sp"
+                    android:textStyle="bold|italic" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F4E8EC"
+                    android:orientation="horizontal"/>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</ScrollView>
